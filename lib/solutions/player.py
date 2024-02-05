@@ -7,7 +7,7 @@ class Player:
         self._games = []
 
     def __repr__(self):
-        return f" • Player(username: `{self.username}`)"
+        return f" <Player(username: `{self.username}`)>"
     
     # Initialize property: `Player.username`
     @property

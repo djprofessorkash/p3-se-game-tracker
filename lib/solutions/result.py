@@ -31,7 +31,8 @@ class Result:
         player.access_played_games(game)
 
     def __repr__(self):
-        return f">> {self.player.username} played {self.game.title} and scored {self.score} points."
+        return f"<Result(player: `{self.player}`, game: `{self.game}`, score: `{self.score}`)>"
+        # return f">> {self.player.username} played {self.game.title} and scored {self.score} points."
     
     # Initialize property: `Result.score`
     @property
