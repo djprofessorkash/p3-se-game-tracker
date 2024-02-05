@@ -1,8 +1,10 @@
 import pytest
 
-from solutions.player import Player
-from solutions.game import Game
-from solutions.result import Result
+from classes.starter import Player, Game, Result
+
+# from solutions.player import Player
+# from solutions.game import Game
+# from solutions.result import Result
 
 
 class TestGame:
