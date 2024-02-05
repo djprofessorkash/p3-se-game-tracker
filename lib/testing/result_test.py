@@ -12,7 +12,7 @@ class TestResults:
     """[TESTING SUITE FOR <Result>]"""
 
     def test_has_score(self):
-        """INITS AND PROPS: A result must be initialized with a score. """
+        """ INITS AND PROPS: A result must be initialized with a score. """
         game = Game("Skribbl.io")
         player = Player("Nick")
         result_1 = Result(player, game, 2000)
@@ -22,7 +22,7 @@ class TestResults:
         assert result_2.score == 5000
 
     def test_score_is_immutable_int(self):
-        """INITS AND PROPS: A resultant score must be an immutable integer. """
+        """ INITS AND PROPS: A resultant score must be an immutable integer. """
         game = Game("Skribbl.io")
         player = Player("Nick")
         result_1 = Result(player, game, 2000)
@@ -35,7 +35,7 @@ class TestResults:
             Result(player, game, 400.99)
 
     def test_score_is_valid(self):
-        """INITS AND PROPS: A resultant score must be inclusively between 1 and 5000 in magnitude. """
+        """ INITS AND PROPS: A resultant score must be inclusively between 1 and 5000 in magnitude. """
         game = Game("Skribbl.io")
         player = Player("Nick")
         result = Result(player, game, 5000)
@@ -49,7 +49,7 @@ class TestResults:
             result.score = 0
 
     def test_has_a_player(self):
-        """OBJECT RELATIONS: A result must be able to associate to a single player. """
+        """ OBJECT RELATIONS: A result must be able to associate to a single player. """
         game = Game("Skribbl.io")
         player_1 = Player("Tricia")
         player_2 = Player("Bianca")
@@ -60,7 +60,7 @@ class TestResults:
         assert result_2.player == player_2
 
     def test_player_of_type_player(self):
-        """OBJECT RELATIONS: A resultant player must be of type <Player>. """
+        """ OBJECT RELATIONS: A resultant player must be of type <Player>. """
         game = Game("Scattegories")
         player = Player("Kyle")
         player_2 = Player("Brett")
@@ -71,7 +71,7 @@ class TestResults:
         assert isinstance(result_2.player, Player)
 
     def test_has_a_game(self):
-        """OBJECT RELATIONS: A result must be able to associate to a single game. """
+        """ OBJECT RELATIONS: A result must be able to associate to a single game. """
         game_1 = Game("Skribbl.io")
         game_2 = Game("Codenames")
         player_1 = Player("Ja'Vonn")
@@ -82,7 +82,7 @@ class TestResults:
         assert result_2.game == game_2
 
     def test_game_of_type_game(self):
-        """OBJECT RELATIONS: A resultant game must be of type <Game>. """
+        """ OBJECT RELATIONS: A resultant game must be of type <Game>. """
         game_1 = Game("Skribbl.io")
         game_2 = Game("Codenames")
         player = Player("Kyle")
@@ -93,7 +93,7 @@ class TestResults:
         assert isinstance(result_2.game, Game)
 
     def test_get_all_results(self):
-        """OBJECT RELATIONS: A result should inherently track all instances of itself. """
+        """ OBJECT RELATIONS: A result should inherently track all instances of itself. """
         Result.all_results = []
         game = Game("Codenames")
         player_1 = Player("Ja'Vonn")
