@@ -56,6 +56,9 @@ comments describing your progress.
 Write the following methods in the classes in the files provided. Feel free to
 build out any helper methods if needed.
 
+**Note that all validations and property construction should** 
+**use `Exception`s as part of effective testing.**
+
 ### Initializers and Properties
 
 #### Game
@@ -104,23 +107,23 @@ build out any helper methods if needed.
 
 #### Player
 
-- `Player results()`
+- `Player access_all_results()`
 
   - Returns a list of all results for that player
   - Results must be of type `Result`
 
-- `Player games_played()`
+- `Player access_played_games()`
   - Returns a **unique** list of all games played by a particular player
   - Games must be of type `Game`
 
 #### Game
 
-- `Game results()`
+- `Game access_all_results()`
 
   - Returns a list of all results for that game
   - Results must be of type `Result`
 
-- `Game players()`
+- `Game access_current_players()`
   - Returns a **unique** list of all players that played a particular game
   - Players must be of type `Player`
 
@@ -128,50 +131,22 @@ build out any helper methods if needed.
 
 #### Player
 
-- `Player played_game(game)`
+- `Player check_if_game_has_been_played(game)`
   - Receives a **game object** as argument
   - Returns `True` if the player has played the game object provided
   - Returns `False` otherwise
-- `Player num_times_played(game)`
+
+- `Player calculate_play_frequency_for_game(game)`
   - Receives a **game object** as argument
   - Returns the number of times the player has played the game instance provided
   - Returns 0 if the player never played the game provided
 
 #### Game
 
-- `Game average_score(player)`
+- `Game calculate_average_score_for_player(player)`
   - Receives a **player object** as argument
   - Returns the average of all the player's scores for a particular game
     instance
   - Reminder: you can calculate the average by adding up all the results' scores
     of the player specified and dividing by the number of those results
 
-### Bonus: Aggregate and Association Method
-
-- `Player classmethod highest_scored(game)`
-  - Receives a **game object** as argument
-  - Returns the `Player` instance with the highest average score for the game
-    provided.
-  - Returns `None` if there are no players that played the game provided.
-  - _hint: will need a way to remember all player objects_
-  - _hint: do you have a method to get the average score on a game for a
-    particular player?_
-  - Uncomment lines 151-161 in the player_test file
-
-### Bonus: For any invalid inputs raise an `Exception`.
-
-- First, **comment out** the following lines
-  - **game_test.py**
-    - lines 25-26
-  - **player_test.py**
-    - lines 25-26, 40-41, 44-45
-  - **result_test.py**
-    - lines 29-31
-- Then, **uncomment** the following lines in the test files
-  - **game_test.py**
-    - lines 29-30, 40-41
-  - **player_test.py**
-    - lines 29-30, 48-49, and 52-53
-  - **result_test.py**
-    - lines 34-35, 38-39, 50-51, and 54-55
-  
